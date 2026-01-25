@@ -1,0 +1,150 @@
+body {
+    background-color: black;
+}
+
+header {
+    background-image: url(../assets/img/pared2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 9rem;
+    height: 45rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 85%, #000000 100%), url(../assets/img/pared2.jpg) no-repeat center center/cover;
+}
+
+h1{
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: 0;
+    font-style: normal;
+    font-size: 10rem;
+    text-align: center;
+    margin-top: 3rem;
+    color: white;
+    opacity: 0.8;
+}
+
+.hero-content p{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: white;
+}
+
+.information{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: right;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.nav-bar {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: 1.5rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    color: white;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.7;
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+h2{
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+
+h3{
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: center;
+    margin: 1.5rem;
+
+    color: rgb(255, 255, 255);
+}
+
+main p{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: rgb(255, 255, 255);
+    line-height: 2.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f2f2f2;
+    margin-top: 4rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+section {
+    margin: 1.5rem 4rem;
+    padding: 1.5rem 4rem;
+    border-radius: 30px;
+}
+
+.project-gallery img{
+    display: inline-block;
+    width: 18rem;
+    height: auto;
+    margin: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-gallery img:hover{
+    transform: scale(1.25);
+    transition: transform 0.3s ease;
+    box-shadow: black 0px 0px 20px;
+}
+
+
+
