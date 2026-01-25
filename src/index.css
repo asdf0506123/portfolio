@@ -152,4 +152,8 @@ iframe {
     height: 15rem;
     gap: 3rem;
 }
-
+iframe:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: black 0px 0px 20px;
+}
