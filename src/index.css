@@ -146,5 +146,11 @@ section {
     box-shadow: black 0px 0px 20px;
 }
 
-
+iframe {
+    display: inline-block;
+    margin: 2rem 2.5rem;
+    width: 25rem;
+    height: 15rem;
+    gap: 3rem;
+}
 
