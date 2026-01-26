@@ -202,3 +202,45 @@ iframe:hover {
     gap: 3rem;
     margin-top: 3rem;
 }
+
+@media (max-width: 768px) {
+    header {
+        padding-top: 6rem;
+        height: 35rem;
+    }
+    h1 {
+        font-size: 4rem;
+        margin-top: 1rem;
+    }
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+    }
+    .nav-bar {
+        flex-direction:row;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .information {
+        flex-direction:row;
+        text-align: center;
+    }
+
+    section {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .project-gallery img {
+        width: 14rem;
+        margin: 0.5rem;
+    }
+
+    iframe {
+        width: 20rem;
+        height: 12rem;
+        margin: 1rem 1.5rem;
+    }
+}
