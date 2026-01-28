@@ -158,10 +158,26 @@ footer {
     font-style: normal;
 }
 
-section {
+/* section {
+    margin: 1.5rem 4rem;
+    padding: 1.5rem 4rem;
+} */
+.section-about {
     margin: 1.5rem 4rem;
     padding: 1.5rem 4rem;
 }
+
+.section-gallery {
+    margin: 1.5rem 4rem;
+    padding: 1.5rem 4rem;
+}
+
+.section-audio {
+    margin: 1.5rem 4rem;
+    padding: 1.5rem 4rem;
+
+}
+
 
 .project-gallery img{
     display: inline-block;
@@ -186,6 +202,9 @@ section {
 
 iframe {
     display: inline-block;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
     margin: 2rem 2.5rem;
     width: 25rem;
     height: 15rem;
@@ -204,7 +223,7 @@ iframe:hover {
     margin-top: 3rem;
 }
 
-.class-web {
+.section-web {
     background-image: url(../assets/img/fondo3.jpg);
     background-size: cover;
     background-position: center;
@@ -216,7 +235,12 @@ iframe:hover {
     background: linear-gradient(to top, rgba(0,0,0,0) 70%, #000000 100%), url(../assets/img/fondo3.jpg) no-repeat center center/cover;
 }
 
-.class-web h3{
+.section-contact {
+    margin: 1.5rem 4rem;
+    padding: 1.5rem 4rem;
+}
+
+.section-web h3{
     color: rgb(0, 0, 0);
     padding-top: 3rem;
 
