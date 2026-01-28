@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    overflow-x: hidden;
 }
 
 header {
@@ -203,44 +204,20 @@ iframe:hover {
     margin-top: 3rem;
 }
 
-@media (max-width: 768px) {
-    header {
-        padding-top: 6rem;
-        height: 35rem;
-    }
-    h1 {
-        font-size: 4rem;
-        margin-top: 1rem;
-    }
-    .hero-content p {
-        font-size: 1.5rem;
-        margin-top: 0.5rem;
-    }
-    .nav-bar {
-        flex-direction:row;
-        align-items: center;
-        gap: 2rem;
-        padding: 1rem;
-    }
+.class-web {
+    background-image: url(../assets/img/fondo3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30rem;
+    margin-left: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0) 70%, #000000 100%), url(../assets/img/fondo3.jpg) no-repeat center center/cover;
+}
 
-    .information {
-        flex-direction:row;
-        text-align: center;
-    }
+.class-web h3{
+    color: rgb(0, 0, 0);
+    padding-top: 3rem;
 
-    section {
-        margin: 1rem;
-        padding: 1rem;
-    }
-
-    .project-gallery img {
-        width: 14rem;
-        margin: 0.5rem;
-    }
-
-    iframe {
-        width: 20rem;
-        height: 12rem;
-        margin: 1rem 1.5rem;
-    }
 }
