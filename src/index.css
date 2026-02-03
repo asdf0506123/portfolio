@@ -178,6 +178,12 @@ footer {
 
 }
 
+.project-audio{
+    display: inline-block;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
 
 .project-gallery img{
     display: inline-block;
@@ -201,14 +207,10 @@ footer {
 }
 
 iframe {
-    display: inline-block;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    margin: 2rem 2.5rem;
+    margin: 1.5rem;
+    margin-left: 3.5rem;
     width: 25rem;
     height: 15rem;
-    gap: 3rem;
 }
 iframe:hover {
     transform: scale(1.05);
@@ -225,7 +227,7 @@ iframe:hover {
 
 .section-web {
     background-color: white;
-    height: 45rem;
+    height: 40rem;
     padding: 1rem;
 }
 
