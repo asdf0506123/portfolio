@@ -1,20 +1,38 @@
-.contenedor {
-    position: relative;
-    display: inline-block;
-    padding-left: 12rem;
+.carusel {
+  margin: 100px auto;
+  width: 90%;
+  border: 5px solid none;
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
 }
 
-#disco {
-    display: block;
-    width: 10rem;
-    transition: all 1s ease-out;
+.carusel::-webkit-scrollbar{
+  display: none;
 }
 
-.contenedor:hover #disco {
-    padding-left: 5rem;
+.group{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  animation: spin 10s infinite linear;
 }
 
-#album {
-    position: absolute;
-    width: 11rem;
+.card{
+  background: cornflowerblue;
+  flex: 0 0 5em;
+  height: 5em;
+padding: 1em;
+font-size: 3rem;
+border-radius: .2em;
+text-align: center;
+align-content: center;
+}
+
+
+@keyframes spin {
+  from {translate: 0;}
+  to {translate: -100%;}
+  
 }
