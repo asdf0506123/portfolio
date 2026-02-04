@@ -266,7 +266,7 @@ iframe:hover {
   align-items: center;
   justify-content: center;
   gap: 1em;
-  animation: spin 30s infinite linear;
+  animation: spin 60s infinite linear;
   padding-right: 1em;
 }
 
