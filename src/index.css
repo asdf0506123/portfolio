@@ -130,7 +130,7 @@ h3{
     font-family: "Zalando Sans Expanded", sans-serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     margin: 1.5rem;
 
@@ -234,6 +234,12 @@ iframe:hover {
 
 .section-web h3 {
     color: black;
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1.5rem;
 }
 
 .section-contact {
