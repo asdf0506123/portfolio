@@ -268,6 +268,15 @@ iframe:hover {
   background: rgb(0, 0, 0);
   flex: 0 0 5em;
   height: 5em;
+font-size: 3rem;
+border-radius: .2em;
+text-align: center;
+align-content: center;
+}
+
+.card img {
+    flex: 0 0 5em;
+  height: 5em;
 padding: 1em;
 font-size: 3rem;
 border-radius: .2em;
