@@ -175,7 +175,6 @@ footer {
 .section-audio {
     margin: 1.5rem 4rem;
     padding: 1.5rem 4rem;
-
 }
 
 .project-audio{
@@ -207,11 +206,9 @@ footer {
 }
 
 iframe {
-    margin: 1.5rem;
-    margin-left: 3.5rem;
-    margin-bottom: 3.5rem;
-    width: 25rem;
-    height: 15rem;
+    margin: 1rem;
+    width: 20rem;
+    height: 10rem;
 }
 iframe:hover {
     transform: scale(1.05);
@@ -295,4 +292,28 @@ align-content: center;
   from {translate: 0;}
   to {translate: -100%;}
   
+}
+
+
+
+
+
+
+
+.carusel-videos {
+  margin: 100px auto;
+  width: 100%;
+  border: 0;
+  display: flex;
+  overflow-x: auto;
+}
+
+.carusel-videos::-webkit-scrollbar{
+    display: none;
+}
+
+.group-video{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
