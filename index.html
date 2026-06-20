@@ -107,37 +107,57 @@
             <section class="section-web fade-in" id="web-design">
                 <h3>Web Design and Backend</h3>
                 <div class="carusel-wrapper">
-                    <div class="carusel">
-                        <div class="group">
-                            <div class="card" onclick="openModal('modal-decori')">
-                                <img src="assets/img/decori.png" alt="Decori Project" class="uno" loading="lazy">
-                                <div class="card-overlay"><span>Click for details</span></div>
-                            </div>
-                            <div class="card" onclick="openModal('modal-ites')">
-                                <img src="assets/img/ites.png" alt="Ites Project" class="dos" loading="lazy">
-                                <div class="card-overlay"><span>Click for details</span></div>
-                            </div>
-                            <div class="card" onclick="openModal('modal-academix')">
-                                <img src="assets/img/academix.png" alt="Academix Project" class="tres" loading="lazy">
-                                <div class="card-overlay"><span>Click for details</span></div>
-                            </div>
-                        </div>
-                        <div aria-hidden="true" class="group">
-                            <div class="card" onclick="openModal('modal-decori')">
-                                <img src="assets/img/decori.png" alt="Decori Project" class="uno" loading="lazy">
-                                <div class="card-overlay"><span>Click for details</span></div>
-                            </div>
-                            <div class="card" onclick="openModal('modal-ites')">
-                                <img src="assets/img/ites.png" alt="Ites Project" class="dos" loading="lazy">
-                                <div class="card-overlay"><span>Click for details</span></div>
-                            </div>
-                            <div class="card" onclick="openModal('modal-academix')">
-                                <img src="assets/img/academix.png" alt="Academix Project" class="tres" loading="lazy">
-                                <div class="card-overlay"><span>Click for details</span></div>
-                            </div>
-                        </div>
-                    </div>
+
+    <button class="carousel-btn left" id="prevBtn">
+        ❮
+    </button>
+
+    <div class="carusel">
+        <div class="group">
+
+            <div class="card" onclick="openModal('modal-decori')">
+                <img src="assets/img/decori.png" alt="Decori Project" loading="lazy">
+                <div class="card-overlay">
+                    <span>Click for details</span>
                 </div>
+            </div>
+
+            <div class="card" onclick="openModal('modal-ites')">
+                <img src="assets/img/ites.png" alt="Ites Project" loading="lazy">
+                <div class="card-overlay">
+                    <span>Click for details</span>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('modal-academix')">
+                <img src="assets/img/academix.png" alt="Academix Project" loading="lazy">
+                <div class="card-overlay">
+                    <span>Click for details</span>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('modal-joybit')">
+                <img src="assets/img/joybit.jpeg" alt="Joybit Project" loading="lazy">
+                <div class="card-overlay">
+                    <span>Click for details</span>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('modal-optica')">
+                <img src="assets/img/optica.png" alt="OpticaYG Project" loading="lazy">
+                <div class="card-overlay">
+                    <span>Click for details</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button class="carousel-btn right" id="nextBtn">
+        ❯
+    </button>
+
+</div>
             </section>
         </section>
 
@@ -160,6 +180,7 @@
             <span class="close-btn" onclick="closeModal('modal-decori')">&times;</span>
             <h2>Decori Project</h2>
             <p>Raffle ticket site where I developed a database linked to the page for ticket purchases strictly using SQL, PHP, and JS.</p>
+            <a href="https://github.com/abrahampa21/boletera" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Repository</a>
         </div>
     </div>
 
@@ -167,7 +188,7 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('modal-ites')">&times;</span>
             <h2>ITES René Descartes</h2>
-            <p>Creation of a vocational test for ITES René Descartes school. It is a dynamic site developed using only HTML, CSS, and JS.</p>
+            <p>Creation of a vocational test for ITES René Descartes school. I developed the logic using only HTML, CSS, and JS.</p>
             <a href="https://testvocacionalites.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Project</a>
         </div>
     </div>
@@ -177,12 +198,31 @@
             <span class="close-btn" onclick="closeModal('modal-academix')">&times;</span>
             <h2>Academix Project</h2>
             <p>Academic portal project where I developed the database with SQL and built the necessary logic using JS and PHP.</p>
+            <a href="https://github.com/abrahampa21/academix" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Repository</a>
+        </div>
+    </div>
+
+    <div id="modal-joybit" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-joybit')">&times;</span>
+            <h2>Joybit Project</h2>
+            <p>ESP32 project where I build and design the hardware using Fusion and ArduinoIDE.</p>
+            <a href="https://github.com/asdf0506123/joybit" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Repository</a>
+        </div>
+    </div>
+
+    <div id="modal-optica" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-optica')">&times;</span>
+            <h2>OpticaYG Project</h2>
+            <p>A java project for managing optical inventory usign java and javaswing.</p>
+            <a href="https://github.com/asdf0506123/optica_YG" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Repository</a>
         </div>
     </div>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Portfolio By Lanie. All rights reserved.</p>
+        <p>&copy; 2026 Portfolio By Lanie.</p>
     </footer>
 </body>
 </html>

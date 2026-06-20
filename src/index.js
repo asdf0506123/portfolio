@@ -64,4 +64,36 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.classList.remove('active');
         }
     });
+
+    // 5. Project carousel controls
+
+const carousel = document.querySelector('.group');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+
+let position = 0;
+
+
+nextBtn.addEventListener('click', () => {
+
+    position -= 300;
+
+    if(position < -600){
+        position = 0;
+    }
+
+    carousel.style.transform = `translateX(${position}px)`;
+
+});
+
+
+prevBtn.addEventListener('click', () => {
+    position += 300;
+
+    if(position > 0){
+        position = -600;
+    }
+    carousel.style.transform = `translateX(${position}px)`;
+});
 });
