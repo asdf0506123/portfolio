@@ -30,9 +30,11 @@
                     <li class="dropdown">
                         <a href="#projects" class="nav-link">Projects</a>
                         <ul class="opciones">
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="#audio">Audio and Remixing</a></li>
                             <li><a href="#web-design">Websites</a></li>
+                            <li><a href="#audio">Multimedia Projects</a></li>
+                            <li><a href="#gallery">Visual Arts</a></li>
+                            
+                            
                         </ul>
                     </li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -48,132 +50,182 @@
 
     <!-- Contenido principal y secciones (MAIN Y SECTION)-->
     <main>
-        <section class="section-about fade-in" id="about">
-            <h2>About Me</h2>
-            <div class="information">
-                <p>Hi, I’m Melanie Alcocer.
-                My work combines frontend development, backend logic, and interface design to create solutions that balance functionality and visual clarity.
-                With a background in creative disciplines such as illustration, audio, video editing and multimedia, I bring a detail-oriented approach to every project.
-                </p>
-            </div>
-        </section>
 
-        <section id="projects" class="fade-in">
-            <h2>Projects</h2>
-            
-            <section class="section-gallery fade-in" id="gallery">
-                <h3>Gallery</h3>
-                <div class="project-gallery">
-                    <div class="gallery-item">
-                        <img src="assets/img/drawing2.jpeg" alt="Black pen" loading="lazy">
-                        <div class="gallery-caption">Black pen</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/img/drawing3.jpeg" alt="Colored pencils" loading="lazy">
-                        <div class="gallery-caption">Colored pencils</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/img/drawing4.jpeg" alt="Watercolors" loading="lazy">
-                        <div class="gallery-caption">Watercolors</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/img/drawing5.jpeg" alt="Charcoal" loading="lazy">
-                        <div class="gallery-caption">Charcoal</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/img/drawing6.jpeg" alt="Graphite pencil" loading="lazy">
-                        <div class="gallery-caption">Graphite pencil</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/img/drawing7.jpeg" alt="Charcoal" loading="lazy">
-                        <div class="gallery-caption">Charcoal</div>
-                    </div>
-                </div>
-            </section>
+    <!-- ABOUT -->
+    <section class="section-about fade-in" id="about">
+        <h2>About Me</h2>
 
-            <section class="section-audio fade-in" id="audio">
-                <h3>Audio and Remixing</h3>
-                <div class="project-audio">
-                    <div class="carusel-videos">
-                        <div class="group-video">
-                            <iframe class="card-video" src="https://www.youtube.com/embed/INM8zZnJAWM?si=2VFGc_xByQZIB0EV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                            <iframe class="card-video" src="https://www.youtube.com/embed/dLyzhgHVsgY?si=0XTlRMRzR0yKAo06" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                            <iframe class="card-video" src="https://www.youtube.com/embed/LEvnNhrFsok?si=ZVYmjTp7JiBlENRu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                            <iframe class="card-video" src="https://www.youtube.com/embed/bNo2hd94IOM?si=Zsf_3yWRzGDxrFGZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        <div class="information">
+            <p>
+                Hi, I’m Melanie Alcocer.
+                I’m a developer focused on creating functional and visually engaging digital experiences.
+                My work combines frontend development, backend logic, and interface design with a creative background in illustration, audio, video editing, and multimedia.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <!-- WEBSITES -->
+        <section class="section-web fade-in" id="web-design">
+            <h3>Websites</h3>
+            <div class="carusel-wrapper">
+                <button class="carousel-btn left" id="prevBtn">
+                    ❮
+                </button>
+                <div class="carusel">
+                    <div class="group">
+                        <div class="card" onclick="openModal('modal-decori')">
+                            <img src="assets/img/decori.png" alt="Decori Project" loading="lazy">
+
+                            <div class="card-overlay">
+                                <span>Click for details</span>
+                            </div>
+                        </div>
+                        <div class="card" onclick="openModal('modal-ites')">
+                            <img src="assets/img/ites.png" alt="Ites Project" loading="lazy">
+
+                            <div class="card-overlay">
+                                <span>Click for details</span>
+                            </div>
+                        </div>
+                        <div class="card" onclick="openModal('modal-academix')">
+                            <img src="assets/img/academix.png" alt="Academix Project" loading="lazy">
+
+                            <div class="card-overlay">
+                                <span>Click for details</span>
+                            </div>
+                        </div>
+                        <div class="card" onclick="openModal('modal-joybit')">
+                            <img src="assets/img/joybit.jpeg" alt="Joybit Project" loading="lazy">
+
+                            <div class="card-overlay">
+                                <span>Click for details</span>
+                            </div>
+                        </div>
+                        <div class="card" onclick="openModal('modal-optica')">
+                            <img src="assets/img/optica.png" alt="Optica Project" loading="lazy">
+
+                            <div class="card-overlay">
+                                <span>Click for details</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            
-            <section class="section-web fade-in" id="web-design">
-                <h3>Websites</h3>
-                <div class="carusel-wrapper">
+                <button class="carousel-btn right" id="nextBtn">
+                    ❯
+                </button>
+            </div>
+        </section>
 
-    <button class="carousel-btn left" id="prevBtn">
-        ❮
-    </button>
+        <!-- MULTIMEDIA -->
+        <section class="section-audio fade-in" id="audio">
 
-    <div class="carusel">
-        <div class="group">
+            <h3>Multimedia Projects</h3>
+            <div class="project-audio">
+                <div class="carusel-videos">
+                    <div class="group-video">
+                        <iframe 
+                        class="card-video"
+                        src="https://www.youtube.com/embed/INM8zZnJAWM"
+                        loading="lazy">
+                        </iframe>
 
-            <div class="card" onclick="openModal('modal-decori')">
-                <img src="assets/img/decori.png" alt="Decori Project" loading="lazy">
-                <div class="card-overlay">
-                    <span>Click for details</span>
+                        <iframe 
+                        class="card-video"
+                        src="https://www.youtube.com/embed/dLyzhgHVsgY"
+                        loading="lazy">
+                        </iframe>
+
+                        <iframe 
+                        class="card-video"
+                        src="https://www.youtube.com/embed/LEvnNhrFsok"
+                        loading="lazy">
+                        </iframe>
+
+                        <iframe 
+                        class="card-video"
+                        src="https://www.youtube.com/embed/bNo2hd94IOM"
+                        loading="lazy">
+                        </iframe>
+
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="card" onclick="openModal('modal-ites')">
-                <img src="assets/img/ites.png" alt="Ites Project" loading="lazy">
-                <div class="card-overlay">
-                    <span>Click for details</span>
+
+        <!-- ART -->
+        <section class="section-gallery fade-in" id="gallery">
+
+            <h3>Visual Art</h3>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="assets/img/drawing2.jpeg" alt="Black pen" loading="lazy">
+                    <div class="gallery-caption">
+                        Black pen
+                    </div>
                 </div>
-            </div>
 
-            <div class="card" onclick="openModal('modal-academix')">
-                <img src="assets/img/academix.png" alt="Academix Project" loading="lazy">
-                <div class="card-overlay">
-                    <span>Click for details</span>
+                <div class="gallery-item">
+                    <img src="assets/img/drawing3.jpeg" alt="Colored pencils" loading="lazy">
+                    <div class="gallery-caption">
+                        Colored pencils
+                    </div>
                 </div>
-            </div>
 
-            <div class="card" onclick="openModal('modal-joybit')">
-                <img src="assets/img/joybit.jpeg" alt="Joybit Project" loading="lazy">
-                <div class="card-overlay">
-                    <span>Click for details</span>
+                <div class="gallery-item">
+                    <img src="assets/img/drawing4.jpeg" alt="Watercolors" loading="lazy">
+                    <div class="gallery-caption">
+                        Watercolors
+                    </div>
                 </div>
-            </div>
 
-            <div class="card" onclick="openModal('modal-optica')">
-                <img src="assets/img/optica.png" alt="OpticaYG Project" loading="lazy">
-                <div class="card-overlay">
-                    <span>Click for details</span>
+                <div class="gallery-item">
+                    <img src="assets/img/drawing5.jpeg" alt="Charcoal" loading="lazy">
+                    <div class="gallery-caption">
+                        Charcoal
+                    </div>
                 </div>
-            </div>
 
+                <div class="gallery-item">
+                    <img src="assets/img/drawing6.jpeg" alt="Graphite pencil" loading="lazy">
+                    <div class="gallery-caption">
+                        Graphite pencil
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/img/drawing7.jpeg" alt="Charcoal" loading="lazy">
+                    <div class="gallery-caption">
+                        Charcoal
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section-contact fade-in" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-icons">
+            <a href="https://github.com/asdf0506123"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon">
+                <img src="assets/img/github.png" alt="github icon">
+            </a>
+            <a href="https://www.linkedin.com/in/melanie-alcocer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon">
+                <img src="assets/img/linkedin.png" alt="linkedin icon">
+            </a>
         </div>
-    </div>
-
-    <button class="carousel-btn right" id="nextBtn">
-        ❯
-    </button>
-
-</div>
-            </section>
-        </section>
-
-        <section class="section-contact fade-in" id="contact">
-            <h2>Contact Me</h2>
-            <div class="contact-icons">
-                <a href="https://github.com/asdf0506123" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <img src="assets/img/github.png" alt="github icon" height="100">
-                </a>
-                <a href="https://www.linkedin.com/in/melanie-alcocer/" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <img src="assets/img/linkedin.png" alt="linkedin icon" height="100">
-                </a>
-            </div>
-        </section>
-    </main>
+    </section>
+</main>
 
     <!-- MODALS -->
     <div id="modal-decori" class="modal">
