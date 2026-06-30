@@ -1,99 +1,68 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
-    const menuToggle = document.getElementById('mobile-menu');
-    const navBar = document.querySelector('.nav-bar');
-    const navLinks = document.querySelectorAll('.nav-link, .opciones a');
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navBar.classList.toggle('active');
-        });
-    }
+  // 1. Mobile menu
+  const menuToggle = document.getElementById('mobile-menu')
+  const navLinks = document.querySelector('.nav-links')
+  const navAnchors = document.querySelectorAll('.nav-links a')
 
-    // Close menu when clicking a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navBar.classList.remove('active');
-        });
-    });
+  menuToggle?.addEventListener('click', () => {
+    menuToggle.classList.toggle('active')
+    navLinks.classList.toggle('active')
+  })
 
-    // 2. Navbar Background on Scroll
-    const navbar = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+  navAnchors.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active')
+      navLinks.classList.remove('active')
+    })
+  })
 
-    // 3. Scroll Reveal Animation
-    const fadeElements = document.querySelectorAll('.fade-in');
+  // 2. Navbar background on scroll
+  const navbar = document.getElementById('navbar')
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60)
+  })
 
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 100;
+  // 3. Scroll reveal with IntersectionObserver
+  const revealEls = document.querySelectorAll('.section, .project-card, .video-frame, .art-item, .about-grid')
 
-        fadeElements.forEach(el => {
-            const elementTop = el.getBoundingClientRect().top;
-            if (elementTop < windowHeight - revealPoint) {
-                el.classList.add('visible');
-            }
-        });
-    };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+      }
+    })
+  }, { threshold: 0.1 })
 
-    // Initial check and event listener
-    revealOnScroll();
-    window.addEventListener('scroll', revealOnScroll);
+  revealEls.forEach(el => {
+    el.classList.add('reveal')
+    observer.observe(el)
+  })
 
-    // 4. Modal Logic
-    window.openModal = function(id) {
-        document.getElementById(id).classList.add('active');
-    };
+  // 4. Random tilt on art items
+  document.querySelectorAll('.art-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const tilt = (Math.random() - 0.5) * 4
+      item.style.transform = `translateY(-6px) rotate(${tilt}deg)`
+    })
+    item.addEventListener('mouseleave', () => {
+      item.style.transform = ''
+    })
+  })
 
-    window.closeModal = function(id) {
-        document.getElementById(id).classList.remove('active');
-    };
+  // 5. Project cards staggered entrance on scroll
+  document.querySelectorAll('.project-card').forEach((card, i) => {
+    card.style.setProperty('--i', i)
+    card.style.transitionDelay = `${i * 0.08}s`
+  })
 
-    // Close when clicking outside of modal content
-    window.addEventListener('click', (e) => {
-        if (e.target.classList.contains('modal')) {
-            e.target.classList.remove('active');
-        }
-    });
-
-    // 5. Project carousel controls
-
-const carousel = document.querySelector('.group');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-
-
-let position = 0;
-
-
-nextBtn.addEventListener('click', () => {
-
-    position -= 300;
-
-    if(position < -600){
-        position = 0;
-    }
-
-    carousel.style.transform = `translateX(${position}px)`;
-
-});
-
-
-prevBtn.addEventListener('click', () => {
-    position += 300;
-
-    if(position > 0){
-        position = -600;
-    }
-    carousel.style.transform = `translateX(${position}px)`;
-});
-});
+  // 6. Playful wiggle on tag hover
+  document.querySelectorAll('.tag').forEach(tag => {
+    tag.addEventListener('mouseenter', () => {
+      tag.style.transform = `rotate(${(Math.random() - 0.5) * 8}deg) scale(1.05)`
+    })
+    tag.addEventListener('mouseleave', () => {
+      tag.style.transform = ''
+    })
+  })
+})

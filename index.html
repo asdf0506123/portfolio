@@ -4,278 +4,246 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>My Portfolio | Melanie Alcocer</title>
+    <title>Melanie Alcocer — Dev & Design</title>
     <link rel="stylesheet" href="src/index.css">
     <link rel="icon" href="assets/img/icon.png" type="image/png">
     <script src="src/index.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Protest+Revolution&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Menu de navegacion (HEADER, NAV Y DIV HERO)-->
-    <header id="home">
-        <nav id="navbar">
-            <div class="nav-container">
-                <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo"><img src="assets/img/icon.png" alt="MA" class="nav-logo-img"></a>
+      <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Work</a></li>
+        <li><a href="#gallery" class="nav-link">Art</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
 
-                <ul class="nav-bar">
-                    <li><a href="#about" class="nav-link">About me</a></li>
-                    <li class="dropdown">
-                        <a href="#projects" class="nav-link">Projects</a>
-                        <ul class="opciones">
-                            <li><a href="#web-design">Websites</a></li>
-                            <li><a href="#audio">Multimedia Projects</a></li>
-                            <li><a href="#gallery">Visual Arts</a></li>
-                            
-                            
-                        </ul>
-                    </li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+  <!-- HERO -->
+  <header id="home">
+    <div class="hero-bg-shapes">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-greeting">Hey there, I'm</p>
+      <h1 class="hero-name">Melanie<br>Alcocer</h1>
+      <p class="hero-tagline">Developer &amp; designer who<span class="highlight-gradient"> draws things</span></p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">Scroll down ↓</div>
+  </header>
 
-        <div class="hero-content">
-            <h1 class="animate-up">Portfolio</h1>
-            <p class="animate-up delay-1">Melanie Alcocer</p>
-        </div>
-    </header>
-
-    <!-- Contenido principal y secciones (MAIN Y SECTION)-->
-    <main>
-
+  <main>
     <!-- ABOUT -->
-    <section class="section-about fade-in" id="about">
-        <h2>About Me</h2>
-
-        <div class="information">
-            <p>
-                Hi, I’m Melanie Alcocer.
-                I’m a developer focused on creating functional and visually engaging digital experiences.
-                My work combines frontend development, backend logic, and interface design with a creative background in illustration, audio, video editing, and multimedia.
-            </p>
+    <section id="about" class="section">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title">About me</h2>
+          <p>
+            I'm a developer who also designs, edits videos, and messes around with audio (especially remix performances). 
+            I like building things that look good <em>and</em> work well — frontend, backend, 
+            doesn't matter. If I can create it, I will.
+          </p>
+          <p>
+            Take a look to my projects and let's work together!.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Frontend</span>
+            <span class="tag tag-orange">Backend</span>
+            <span class="tag tag-yellow">UI Design</span>
+            <span class="tag tag-red">Illustration</span>
+            <span class="tag">Multimedia</span>
+          </div>
         </div>
+        <div class="about-visual">
+          <div class="about-doodle">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="80" fill="none" stroke="var(--red)" stroke-width="2" stroke-dasharray="4 6" opacity="0.5"/>
+              <circle cx="100" cy="100" r="60" fill="none" stroke="var(--orange)" stroke-width="2" stroke-dasharray="2 8" opacity="0.4"/>
+              <circle cx="100" cy="100" r="40" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-dasharray="1 5" opacity="0.6"/>
+              <text x="100" y="108" text-anchor="middle" font-size="70" fill="var(--text)">✦</text>
+            </svg>
+          </div>
+        </div>
+      </div>
     </section>
 
-
     <!-- PROJECTS -->
-    <section id="projects" class="fade-in">
-        <h2>Projects</h2>
-        <!-- WEBSITES -->
-        <section class="section-web fade-in" id="web-design">
-            <h3>Websites</h3>
-            <div class="carusel-wrapper">
-                <button class="carousel-btn left" id="prevBtn">
-                    ❮
-                </button>
-                <div class="carusel">
-                    <div class="group">
-                        <div class="card" onclick="openModal('modal-decori')">
-                            <img src="assets/img/decori.png" alt="Decori Project" loading="lazy">
-
-                            <div class="card-overlay">
-                                <span>Click for details</span>
-                            </div>
-                        </div>
-                        <div class="card" onclick="openModal('modal-ites')">
-                            <img src="assets/img/ites.png" alt="Ites Project" loading="lazy">
-
-                            <div class="card-overlay">
-                                <span>Click for details</span>
-                            </div>
-                        </div>
-                        <div class="card" onclick="openModal('modal-academix')">
-                            <img src="assets/img/academix.png" alt="Academix Project" loading="lazy">
-
-                            <div class="card-overlay">
-                                <span>Click for details</span>
-                            </div>
-                        </div>
-                        <div class="card" onclick="openModal('modal-joybit')">
-                            <img src="assets/img/joybit.jpeg" alt="Joybit Project" loading="lazy">
-
-                            <div class="card-overlay">
-                                <span>Click for details</span>
-                            </div>
-                        </div>
-                        <div class="card" onclick="openModal('modal-optica')">
-                            <img src="assets/img/optica.png" alt="Optica Project" loading="lazy">
-
-                            <div class="card-overlay">
-                                <span>Click for details</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-btn right" id="nextBtn">
-                    ❯
-                </button>
+    <section id="projects" class="section">
+      <h2 class="section-title">Stuff I've built</h2>
+      <div class="project-grid">
+        <div class="project-card" style="--card-accent: var(--red)">
+          <div class="project-img">
+            <img src="assets/img/decori.png" alt="Decori Project" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>Decori</h3>
+            <p>Raffle ticket site with database integration for ticket purchases using SQL, PHP, and JS.</p>
+            <div class="project-tags">
+              <span>SQL</span><span>PHP</span><span>JavaScript</span>
             </div>
-        </section>
+            <a href="https://github.com/abrahampa21/boletera" target="_blank" rel="noopener" class="btn btn-small">Repo →</a>
+          </div>
+        </div>
 
-        <!-- MULTIMEDIA -->
-        <section class="section-audio fade-in" id="audio">
-
-            <h3>Multimedia Projects</h3>
-            <div class="project-audio">
-                <div class="carusel-videos">
-                    <div class="group-video">
-                        <iframe 
-                        class="card-video"
-                        src="https://www.youtube.com/embed/INM8zZnJAWM"
-                        loading="lazy">
-                        </iframe>
-
-                        <iframe 
-                        class="card-video"
-                        src="https://www.youtube.com/embed/dLyzhgHVsgY"
-                        loading="lazy">
-                        </iframe>
-
-                        <iframe 
-                        class="card-video"
-                        src="https://www.youtube.com/embed/LEvnNhrFsok"
-                        loading="lazy">
-                        </iframe>
-
-                        <iframe 
-                        class="card-video"
-                        src="https://www.youtube.com/embed/bNo2hd94IOM"
-                        loading="lazy">
-                        </iframe>
-
-                    </div>
-                </div>
+        <div class="project-card" style="--card-accent: var(--orange)">
+          <div class="project-img">
+            <img src="assets/img/ites.png" alt="ITES Project" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>ITES René Descartes</h3>
+            <p>Vocational test for ITES school. Built the full logic with just HTML, CSS, and JS.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
             </div>
-        </section>
+            <a href="https://testvocacionalites.netlify.app/" target="_blank" rel="noopener" class="btn btn-small">Live →</a>
+          </div>
+        </div>
 
-
-        <!-- ART -->
-        <section class="section-gallery fade-in" id="gallery">
-
-            <h3>Visual Art</h3>
-            <div class="project-gallery">
-                <div class="gallery-item">
-                    <img src="assets/img/drawing2.jpeg" alt="Black pen" loading="lazy">
-                    <div class="gallery-caption">
-                        Black pen
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img src="assets/img/drawing3.jpeg" alt="Colored pencils" loading="lazy">
-                    <div class="gallery-caption">
-                        Colored pencils
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img src="assets/img/drawing4.jpeg" alt="Watercolors" loading="lazy">
-                    <div class="gallery-caption">
-                        Watercolors
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img src="assets/img/drawing5.jpeg" alt="Charcoal" loading="lazy">
-                    <div class="gallery-caption">
-                        Charcoal
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img src="assets/img/drawing6.jpeg" alt="Graphite pencil" loading="lazy">
-                    <div class="gallery-caption">
-                        Graphite pencil
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img src="assets/img/drawing7.jpeg" alt="Charcoal" loading="lazy">
-                    <div class="gallery-caption">
-                        Charcoal
-                    </div>
-                </div>
-
+        <div class="project-card" style="--card-accent: var(--yellow)">
+          <div class="project-img">
+            <img src="assets/img/academix.png" alt="Academix Project" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>Academix</h3>
+            <p>Academic portal with a SQL database and JS/PHP backend logic.</p>
+            <div class="project-tags">
+              <span>SQL</span><span>PHP</span><span>JavaScript</span>
             </div>
+            <a href="https://github.com/abrahampa21/academix" target="_blank" rel="noopener" class="btn btn-small">Repo →</a>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: var(--amber)">
+          <div class="project-img">
+            <img src="assets/img/joybit.jpeg" alt="Joybit Project" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>Joybit</h3>
+            <p>ESP32 hardware project with Fusion 3D design and using an ESP32 (with Arduino IDE).</p>
+            <div class="project-tags">
+              <span>ESP32</span><span>Arduino</span><span>Fusion 360</span>
+            </div>
+            <a href="https://github.com/asdf0506123/joybit" target="_blank" rel="noopener" class="btn btn-small">Repo →</a>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: var(--red)">
+          <div class="project-img">
+            <img src="assets/img/optica.png" alt="Optica YG Project" loading="lazy">
+          </div>
+          <div class="project-info">
+            <h3>Optica YG</h3>
+            <p>Java desktop app for managing optical inventory with Java Swing.</p>
+            <div class="project-tags">
+              <span>Java</span><span>Swing</span>
+            </div>
+            <a href="https://github.com/asdf0506123/optica_YG" target="_blank" rel="noopener" class="btn btn-small">Repo →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MULTIMEDIA -->
+    <section id="audio" class="section">
+      <h2 class="section-title">Sounds &amp; visuals</h2>
+      <div class="video-grid">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/INM8zZnJAWM" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/dLyzhgHVsgY" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/LEvnNhrFsok" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/bNo2hd94IOM" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section">
+      <h2 class="section-title">Doodles &amp; drawings</h2>
+      <div class="art-grid">
+        <div class="art-item art-tall">
+          <img src="assets/img/drawing1.jpeg" alt="Drawing" loading="lazy">
+          <div class="art-label">✎ Sketch</div>
+        </div>
+        <div class="art-item">
+          <img src="assets/img/drawing2.jpeg" alt="Black pen" loading="lazy">
+          <div class="art-label">✎ Black pen</div>
+        </div>
+        <div class="art-item art-wide">
+          <img src="assets/img/drawing3.jpeg" alt="Colored pencils" loading="lazy">
+          <div class="art-label">✎ Colored pencils</div>
+        </div>
+        <div class="art-item">
+          <img src="assets/img/drawing4.jpeg" alt="Watercolors" loading="lazy">
+          <div class="art-label">✎ Watercolors</div>
+        </div>
+        <div class="art-item">
+          <img src="assets/img/drawing5.jpeg" alt="Charcoal" loading="lazy">
+          <div class="art-label">✎ Charcoal</div>
+        </div>
+        <div class="art-item art-tall">
+          <img src="assets/img/drawing6.jpeg" alt="Graphite pencil" loading="lazy">
+          <div class="art-label">✎ Graphite pencil</div>
+        </div>
+        <div class="art-item">
+          <img src="assets/img/drawing7.jpeg" alt="Charcoal" loading="lazy">
+          <div class="art-label">✎ Charcoal</div>
+        </div>
+      </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section-contact fade-in" id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-icons">
-            <a href="https://github.com/asdf0506123"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-icon">
-                <img src="assets/img/github.png" alt="github icon">
-            </a>
-            <a href="https://www.linkedin.com/in/melanie-alcocer/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-icon">
-                <img src="assets/img/linkedin.png" alt="linkedin icon">
-            </a>
+    <section id="contact" class="section">
+      <div class="contact-wrap">
+        <h2 class="section-title">Let's make something cool</h2>
+        <p class="contact-sub">I'm always down to collaborate on fun projects.</p>
+        <div class="contact-links">
+          <a href="https://github.com/asdf0506123" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <span class="contact-icon github-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg>
+            </span>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/melanie-alcocer/" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <span class="contact-icon linkedin-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </span>
+            <span>LinkedIn</span>
+          </a>
         </div>
+        <p class="contact-email">or <a href="mailto:melanieatr2005@gmail.com" class="email-link">drop me an email</a></p>
+      </div>
     </section>
-</main>
+  </main>
 
-    <!-- MODALS -->
-    <div id="modal-decori" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal-decori')">&times;</span>
-            <h2>Decori Project</h2>
-            <p>Raffle ticket site where I developed a database linked to the page for ticket purchases strictly using SQL, PHP, and JS.</p>
-            <a href="https://github.com/abrahampa21/boletera" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Repository</a>
-        </div>
-    </div>
+  <footer>
+    <p>&copy; 2026 — Lanie</p>
+  </footer>
 
-    <div id="modal-ites" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal-ites')">&times;</span>
-            <h2>ITES René Descartes</h2>
-            <p>Creation of a vocational test for ITES René Descartes school. I developed the logic using only HTML, CSS, and JS.</p>
-            <a href="https://testvocacionalites.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Project</a>
-        </div>
-    </div>
-
-    <div id="modal-academix" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal-academix')">&times;</span>
-            <h2>Academix Project</h2>
-            <p>Academic portal project where I developed the database with SQL and built the necessary logic using JS and PHP.</p>
-            <a href="https://github.com/abrahampa21/academix" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Repository</a>
-        </div>
-    </div>
-
-    <div id="modal-joybit" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal-joybit')">&times;</span>
-            <h2>Joybit Project</h2>
-            <p>ESP32 project where I build and design the hardware using Fusion and ArduinoIDE.</p>
-            <a href="https://github.com/asdf0506123/joybit" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Repository</a>
-        </div>
-    </div>
-
-    <div id="modal-optica" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal-optica')">&times;</span>
-            <h2>OpticaYG Project</h2>
-            <p>A java project for managing optical inventory usign java and javaswing.</p>
-            <a href="https://github.com/asdf0506123/optica_YG" target="_blank" rel="noopener noreferrer" class="btn-modal">Visit Repository</a>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Portfolio By Lanie.</p>
-    </footer>
 </body>
 </html>
