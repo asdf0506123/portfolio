@@ -100,21 +100,34 @@ document.addEventListener('DOMContentLoaded', () => {
     wrap.setAttribute('aria-hidden', 'true');
     let i = 0;
 
-    Array.from(text).forEach(character => {
-      const outer = document.createElement('span');
-      outer.className = 'roll-char';
-      const inner = document.createElement('span');
-      inner.className = 'roll-inner';
-      inner.style.setProperty('--i', i++);
-
-      for (let face = 0; face < 2; face++) {
-        const b = document.createElement('b');
-        b.textContent = character === ' ' ? '\u00A0' : character;
-        inner.appendChild(b);
+    text.split(/(\s+)/).forEach(part => {
+      if (/^\s+$/.test(part)) {
+        wrap.appendChild(document.createTextNode(' '));
+        return;
       }
 
-      outer.appendChild(inner);
-      wrap.appendChild(outer);
+      const word = document.createElement('span');
+      word.className = 'roll-word';
+
+      Array.from(part).forEach(character => {
+        const outer = document.createElement('span');
+        outer.className = 'roll-char';
+        outer.style.setProperty('--ci', i);
+        const inner = document.createElement('span');
+        inner.className = 'roll-inner';
+        inner.style.setProperty('--i', i++);
+
+        for (let face = 0; face < 2; face++) {
+          const b = document.createElement('b');
+          b.textContent = character;
+          inner.appendChild(b);
+        }
+
+        outer.appendChild(inner);
+        word.appendChild(outer);
+      });
+
+      wrap.appendChild(word);
     });
 
     title.replaceChildren(wrap);
@@ -125,6 +138,49 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.nav-links li').forEach((item, i) => {
     item.style.setProperty('--i', i);
   });
+
+  /* ---------- EDITIONS: scatter sort on the project cards ---------- */
+
+  const projectCards = Array.from(document.querySelectorAll('.project-card'));
+  const scatterBtn = document.getElementById('scatter-btn');
+  const accentOrder = ['--red', '--orange', '--yellow', '--amber'];
+
+  const scatterCards = () => {
+    projectCards.forEach(card => {
+      card.style.setProperty('--sx', `${Math.round((Math.random() - 0.5) * 240)}px`);
+      card.style.setProperty('--sy', `${Math.round((Math.random() - 0.5) * 200)}px`);
+      card.style.setProperty('--sr', `${((Math.random() - 0.5) * 20).toFixed(1)}deg`);
+    });
+  };
+
+  scatterCards();
+
+  scatterBtn?.addEventListener('click', () => {
+    projectCards.forEach(card => {
+      const accent = card.getAttribute('style')?.match(/--card-accent:\s*var\((--[\w-]+)\)/)?.[1];
+      card.style.transitionDelay = `${accentOrder.indexOf(accent) * 0.09}s`;
+    });
+    scatterCards();
+    projectCards.forEach(card => card.classList.add('scattered'));
+    window.setTimeout(() => {
+      projectCards.forEach(card => card.classList.remove('scattered'));
+    }, 420);
+  });
+
+  /* ---------- THE OTHER SIDE: ink reveal when Contact arrives ---------- */
+
+  if (!reduced) {
+    const inkContact = document.getElementById('contact');
+    if (inkContact) {
+      const observer = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          inkContact.classList.add('ink-in');
+          observer.disconnect();
+        }
+      }, { threshold: 0.15 });
+      observer.observe(inkContact);
+    }
+  }
 
   /* ---------- AIRWAVE: curved, scroll-reactive ticker ---------- */
 
