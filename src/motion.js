@@ -262,4 +262,92 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  /* ---------- MONO + INK: record collection and player ---------- */
+
+  const player = document.getElementById('player');
+  const playerFrame = document.getElementById('player-frame');
+  const playerTitle = document.getElementById('player-title');
+  const playerNumber = document.getElementById('player-number');
+  const records = Array.from(document.querySelectorAll('.record'));
+  let activeRecord = 0;
+  let playerOpen = false;
+
+  const loadRecord = index => {
+    activeRecord = (index + records.length) % records.length;
+    const record = records[activeRecord];
+    playerNumber.textContent = record.dataset.number;
+    playerTitle.textContent = record.dataset.title;
+    playerFrame.src = `https://www.youtube-nocookie.com/embed/${record.dataset.video}?autoplay=1&rel=0`;
+  };
+
+  const openPlayer = index => {
+    loadRecord(index);
+    playerOpen = true;
+    player.hidden = false;
+    player.classList.remove('uninking');
+    player.classList.add('inking');
+    requestAnimationFrame(() => player.classList.add('open'));
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => document.getElementById('player-close').focus(), reduced ? 0 : 700);
+  };
+
+  const closePlayer = () => {
+    playerOpen = false;
+    player.classList.remove('open', 'inking');
+    player.classList.add('uninking');
+    document.body.style.overflow = '';
+    playerFrame.src = '';
+    window.setTimeout(() => {
+      player.hidden = true;
+      player.classList.remove('uninking');
+    }, reduced ? 0 : 650);
+    records[activeRecord]?.focus();
+  };
+
+  records.forEach((record, index) => {
+    record.addEventListener('click', () => openPlayer(index));
+    record.addEventListener('keydown', event => {
+      if (event.key === ' ') {
+        event.preventDefault();
+        record.classList.toggle('flipped');
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        records[(index + 1) % records.length].focus();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        records[(index - 1 + records.length) % records.length].focus();
+      }
+    });
+  });
+
+  document.getElementById('player-close')?.addEventListener('click', closePlayer);
+  document.getElementById('player-prev')?.addEventListener('click', () => loadRecord(activeRecord - 1));
+  document.getElementById('player-next')?.addEventListener('click', () => loadRecord(activeRecord + 1));
+  player?.addEventListener('click', event => {
+    if (event.target.closest('[data-close]')) closePlayer();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (!playerOpen) return;
+
+    if (event.key === 'Escape') {
+      closePlayer();
+    } else if (event.key === 'ArrowLeft') {
+      loadRecord(activeRecord - 1);
+    } else if (event.key === 'ArrowRight') {
+      loadRecord(activeRecord + 1);
+    } else if (event.key === 'Tab') {
+      const buttons = Array.from(player.querySelectorAll('button'));
+      const first = buttons[0];
+      const last = buttons[buttons.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
 });

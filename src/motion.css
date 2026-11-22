@@ -215,7 +215,8 @@ body.is-ready .hero-scroll-hint {
   pointer-events: none;
   background: linear-gradient(110deg,
               transparent 42%, rgba(232, 93, 4, 0.055) 50%, transparent 58%);
-  transform: translateX(-120%);
+  background-size: 250% 100%;
+  background-position: 150% 0;
 }
 
 .section.visible::before {
@@ -223,7 +224,8 @@ body.is-ready .hero-scroll-hint {
 }
 
 @keyframes panel-sweep {
-  to { transform: translateX(120%); }
+  from { background-position: 150% 0; }
+  to   { background-position: -50% 0; }
 }
 
 /* ---------- AIRWAVE: curved, scroll-responsive ticker ---------- */
@@ -455,6 +457,405 @@ body.is-ready .hero-scroll-hint {
 .lightbox-prev:hover,
 .lightbox-next:hover { transform: translateY(-50%) scale(1.1); }
 
+/* ---------- INK: hand-drawn stroke in About ---------- */
+
+.ink-signature {
+  width: min(100%, 300px);
+  height: auto;
+  overflow: visible;
+}
+
+.ink-signature path {
+  fill: none;
+  stroke: url(#inkGrad);
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.ink-signature-main { stroke-width: 6; }
+.ink-signature-alt  { stroke-width: 2.5; opacity: 0.6; }
+
+#about.visible .ink-signature path {
+  animation: ink-draw 1.5s cubic-bezier(0.65, 0, 0.25, 1) 0.25s forwards;
+}
+
+#about.visible .ink-signature-alt {
+  animation-delay: 0.6s;
+}
+
+@keyframes ink-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ---------- MONO: record collection ---------- */
+
+.audio-intro {
+  text-align: center;
+  color: var(--text-muted);
+  margin: -1.2rem 0 3rem;
+  font-size: 0.95rem;
+}
+
+.record-rack {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  perspective: 1200px;
+}
+
+.record {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  cursor: pointer;
+}
+
+.record-disc {
+  --slide: 0px;
+  --flip: 0deg;
+  position: relative;
+  width: clamp(150px, 15vw, 210px);
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  transform: translateX(var(--slide)) rotateY(var(--flip));
+  transition: transform 0.65s cubic-bezier(0.2, 1.2, 0.3, 1);
+}
+
+.record:hover .record-disc,
+.record:focus-visible .record-disc {
+  --slide: 16px;
+}
+
+.record.flipped .record-disc {
+  --flip: 180deg;
+}
+
+.record-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.record-front {
+  background: #0d0d0d;
+}
+
+.record:hover .record-front,
+.record:focus-visible .record-front {
+  animation: disc-spin 4s linear infinite;
+}
+
+@keyframes disc-spin {
+  to { transform: rotate(360deg); }
+}
+
+.record-grooves {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle at center, #111 0 2px, #1e1e1e 2px 3px, #0b0b0b 3px 5px);
+}
+
+.record-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 210deg, transparent 0 18%, rgba(255, 255, 255, 0.13) 25%, transparent 32% 62%, rgba(255, 255, 255, 0.08) 70%, transparent 78%);
+  mix-blend-mode: screen;
+}
+
+.record-label {
+  position: absolute;
+  inset: 30%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #1a1a1a;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.record-label img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.record-label::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(193, 18, 31, 0.25), rgba(255, 186, 8, 0.2));
+  mix-blend-mode: color;
+}
+
+.record-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, #1b1b1b, #0b0b0b);
+  display: grid;
+  place-items: center;
+}
+
+.record-back-label {
+  width: 54%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--yellow);
+}
+
+.record-back-label span {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.record-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 230px;
+}
+
+.record-number {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  color: var(--orange);
+}
+
+.record-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1.35;
+  transition: color var(--transition);
+}
+
+.record:hover .record-name,
+.record:focus-visible .record-name {
+  color: var(--yellow);
+}
+
+.record-artist {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.record:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+.record-hint {
+  text-align: center;
+  margin-top: 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.record-hint span {
+  color: var(--orange);
+}
+
+@media screen and (max-width: 900px) {
+  .record-rack { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 600px) {
+  .record-rack {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 0 1rem 1.2rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .record {
+    flex: 0 0 78vw;
+    scroll-snap-align: center;
+  }
+
+  .record-disc { width: min(58vw, 210px); }
+}
+
+/* ---------- INK: scribble reveal for the player ---------- */
+
+.player[hidden] {
+  display: none;
+}
+
+.player {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: grid;
+  place-items: center;
+}
+
+.player-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 6, 6, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.player.open .player-backdrop {
+  opacity: 1;
+}
+
+.ink-sweep {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ink-sweep path {
+  fill: none;
+  stroke: url(#inkSweepGrad);
+  stroke-width: 210;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+}
+
+.player.inking .ink-sweep path {
+  opacity: 1;
+  animation: ink-draw 1.05s cubic-bezier(0.55, 0, 0.2, 1) 0.25s forwards;
+}
+
+.player.uninking .ink-sweep path {
+  opacity: 1;
+  stroke-dashoffset: 0;
+  animation: ink-undo 0.6s cubic-bezier(0.55, 0, 0.2, 1) forwards;
+}
+
+@keyframes ink-undo {
+  to { stroke-dashoffset: 1; }
+}
+
+.player-shell {
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 860px);
+  padding: 1.4rem;
+  border-radius: 18px;
+  background: rgba(18, 18, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.player.open .player-shell {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.68s;
+}
+
+.player-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.player-kicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.player-close,
+.player-actions button {
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-size: 0.8rem;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.player-close {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.player-close:hover,
+.player-actions button:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.player-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.player-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.player-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  line-height: 1.35;
+  margin: 1rem 0 0.9rem;
+}
+
+.player-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.player button:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
 /* ---------- Reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -479,4 +880,9 @@ body.is-ready .hero-scroll-hint {
   .hero-scroll-hint { animation: none !important; }
   .roll-inner { transition: none !important; }
   .section-title::after { transition: none !important; transform: translateX(-50%) scaleX(1); }
+
+  .ink-signature path { stroke-dashoffset: 0 !important; animation: none !important; }
+  .record-disc, .record-front { animation: none !important; transition: none !important; }
+  .ink-sweep { display: none; }
+  .player-shell { opacity: 1 !important; transform: none !important; transition: none !important; }
 }

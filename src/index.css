@@ -468,16 +468,6 @@ header::before {
   align-items: center;
 }
 
-.about-doodle svg {
-  width: 220px;
-  height: 220px;
-  animation: spinSlow 30s linear infinite;
-}
-
-@keyframes spinSlow {
-  to { transform: rotate(360deg); }
-}
-
 /* ========== PROJECTS ========== */
 
 .project-grid {

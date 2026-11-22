@@ -97,15 +97,18 @@
             <span class="tag">Multimedia</span>
           </div>
         </div>
-        <div class="about-visual">
-          <div class="about-doodle">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="80" fill="none" stroke="var(--red)" stroke-width="2" stroke-dasharray="4 6" opacity="0.5"/>
-              <circle cx="100" cy="100" r="60" fill="none" stroke="var(--orange)" stroke-width="2" stroke-dasharray="2 8" opacity="0.4"/>
-              <circle cx="100" cy="100" r="40" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-dasharray="1 5" opacity="0.6"/>
-              <text x="100" y="108" text-anchor="middle" font-size="70" fill="var(--text)">✦</text>
-            </svg>
-          </div>
+        <div class="about-visual" aria-hidden="true">
+          <svg class="ink-signature" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="inkGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="var(--red)"/>
+                <stop offset="0.5" stop-color="var(--orange)"/>
+                <stop offset="1" stop-color="var(--yellow)"/>
+              </linearGradient>
+            </defs>
+            <path class="ink-signature-main" pathLength="1" d="M 18 158 C 58 62, 96 190, 146 108 S 232 38, 302 126"/>
+            <path class="ink-signature-alt" pathLength="1" d="M 46 182 C 96 142, 140 200, 196 150 S 258 118, 292 156"/>
+          </svg>
         </div>
       </div>
     </section>
@@ -186,23 +189,78 @@
       </div>
     </section>
 
-    <!-- MULTIMEDIA -->
-    <section id="audio" class="section">
+    <!-- MULTIMEDIA / MONO record collection -->
+    <section id="audio" class="section audio-section">
       <h2 class="section-title">Sounds &amp; visuals</h2>
-      <div class="video-grid">
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/INM8zZnJAWM" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/dLyzhgHVsgY" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/LEvnNhrFsok" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/bNo2hd94IOM" loading="lazy" allowfullscreen></iframe>
-        </div>
+      <p class="audio-intro">Dance-cover remixes &amp; performance edits. Pick a disc and give it a spin.</p>
+
+      <div class="record-rack" aria-label="Remix record collection">
+        <button class="record" type="button" data-video="INM8zZnJAWM" data-title="TAEMIN — Criminal / Danger (Award Show Concept)" data-number="01">
+          <span class="record-disc">
+            <span class="record-face record-front">
+              <span class="record-grooves"></span>
+              <span class="record-label"><img src="https://img.youtube.com/vi/INM8zZnJAWM/hqdefault.jpg" alt="" loading="lazy"></span>
+              <span class="record-shine"></span>
+            </span>
+            <span class="record-face record-back"><span class="record-back-label">01<span>PLAY ▶</span></span></span>
+          </span>
+          <span class="record-info">
+            <span class="record-number">01 / 04</span>
+            <span class="record-name">Criminal / Danger</span>
+            <span class="record-artist">TAEMIN · Award Show Concept</span>
+          </span>
+        </button>
+
+        <button class="record" type="button" data-video="dLyzhgHVsgY" data-title="STRAY KIDS — God's Menu Dance Break" data-number="02">
+          <span class="record-disc">
+            <span class="record-face record-front">
+              <span class="record-grooves"></span>
+              <span class="record-label"><img src="https://img.youtube.com/vi/dLyzhgHVsgY/hqdefault.jpg" alt="" loading="lazy"></span>
+              <span class="record-shine"></span>
+            </span>
+            <span class="record-face record-back"><span class="record-back-label">02<span>PLAY ▶</span></span></span>
+          </span>
+          <span class="record-info">
+            <span class="record-number">02 / 04</span>
+            <span class="record-name">God's Menu Dance Break</span>
+            <span class="record-artist">STRAY KIDS · Dance Cover Mix</span>
+          </span>
+        </button>
+
+        <button class="record" type="button" data-video="LEvnNhrFsok" data-title="BAD VILLAIN — Dance Cover Remix" data-number="03">
+          <span class="record-disc">
+            <span class="record-face record-front">
+              <span class="record-grooves"></span>
+              <span class="record-label"><img src="https://img.youtube.com/vi/LEvnNhrFsok/hqdefault.jpg" alt="" loading="lazy"></span>
+              <span class="record-shine"></span>
+            </span>
+            <span class="record-face record-back"><span class="record-back-label">03<span>PLAY ▶</span></span></span>
+          </span>
+          <span class="record-info">
+            <span class="record-number">03 / 04</span>
+            <span class="record-name">Bad Villain</span>
+            <span class="record-artist">Dance Cover Remix</span>
+          </span>
+        </button>
+
+        <button class="record" type="button" data-video="bNo2hd94IOM" data-title="BTS — Dionysus (Remix Performance Ver.)" data-number="04">
+          <span class="record-disc">
+            <span class="record-face record-front">
+              <span class="record-grooves"></span>
+              <span class="record-label"><img src="https://img.youtube.com/vi/bNo2hd94IOM/hqdefault.jpg" alt="" loading="lazy"></span>
+              <span class="record-shine"></span>
+            </span>
+            <span class="record-face record-back"><span class="record-back-label">04<span>PLAY ▶</span></span></span>
+          </span>
+          <span class="record-info">
+            <span class="record-number">04 / 04</span>
+            <span class="record-name">Dionysus Remix</span>
+            <span class="record-artist">BTS · Performance Ver.</span>
+          </span>
+        </button>
       </div>
+
+      <p class="record-hint"><span>← →</span> browse <span>·</span> <span>space</span> flip <span>·</span> <span>enter</span> play</p>
     </section>
 
     <!-- GALLERY -->
@@ -267,6 +325,35 @@
   <footer>
     <p>&copy; 2026 — Lanie</p>
   </footer>
+
+  <!-- INK + player for the record collection -->
+  <div class="player" id="player" role="dialog" aria-modal="true" aria-label="Remix player" hidden>
+    <div class="player-backdrop" data-close></div>
+    <svg class="ink-sweep" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="inkSweepGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="var(--red)"/>
+          <stop offset="0.5" stop-color="var(--orange)"/>
+          <stop offset="1" stop-color="var(--yellow)"/>
+        </linearGradient>
+      </defs>
+      <path id="ink-sweep-path" pathLength="1" d="M -140 690 C 180 540, 400 810, 690 520 S 1120 250, 1580 170"/>
+    </svg>
+    <div class="player-shell">
+      <div class="player-head">
+        <span class="player-kicker">Now playing · <span id="player-number">01</span></span>
+        <button class="player-close" id="player-close" type="button" aria-label="Close player">✕</button>
+      </div>
+      <div class="player-frame">
+        <iframe id="player-frame" src="" title="Remix video player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3 class="player-title" id="player-title"></h3>
+      <div class="player-actions">
+        <button id="player-prev" type="button" aria-label="Previous remix">← Prev</button>
+        <button id="player-next" type="button" aria-label="Next remix">Next →</button>
+      </div>
+    </div>
+  </div>
 
   <!-- STILLFRAME / aperture lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
