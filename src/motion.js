@@ -142,29 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- EDITIONS: scatter sort on the project cards ---------- */
 
   const projectCards = Array.from(document.querySelectorAll('.project-card'));
-  const scatterBtn = document.getElementById('scatter-btn');
-  const accentOrder = ['--red', '--orange', '--yellow', '--amber'];
 
-  const scatterCards = () => {
-    projectCards.forEach(card => {
-      card.style.setProperty('--sx', `${Math.round((Math.random() - 0.5) * 240)}px`);
-      card.style.setProperty('--sy', `${Math.round((Math.random() - 0.5) * 200)}px`);
-      card.style.setProperty('--sr', `${((Math.random() - 0.5) * 20).toFixed(1)}deg`);
-    });
-  };
-
-  scatterCards();
-
-  scatterBtn?.addEventListener('click', () => {
-    projectCards.forEach(card => {
-      const accent = card.getAttribute('style')?.match(/--card-accent:\s*var\((--[\w-]+)\)/)?.[1];
-      card.style.transitionDelay = `${accentOrder.indexOf(accent) * 0.09}s`;
-    });
-    scatterCards();
-    projectCards.forEach(card => card.classList.add('scattered'));
-    window.setTimeout(() => {
-      projectCards.forEach(card => card.classList.remove('scattered'));
-    }, 420);
+  projectCards.forEach(card => {
+    card.style.setProperty('--sx', `${Math.round((Math.random() - 0.5) * 240)}px`);
+    card.style.setProperty('--sy', `${Math.round((Math.random() - 0.5) * 200)}px`);
+    card.style.setProperty('--sr', `${((Math.random() - 0.5) * 20).toFixed(1)}deg`);
   });
 
   /* ---------- THE OTHER SIDE: ink reveal when Contact arrives ---------- */
@@ -216,11 +198,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const frame = () => {
       const y = window.scrollY;
-      boost = Math.min(boost + Math.abs(y - lastY) * 0.35, 28);
+      boost = Math.min(boost + Math.abs(y - lastY) * 0.05, 4);
       lastY = y;
-      boost *= 0.94;
+      boost *= 0.88;
 
-      offset -= 0.55 + boost;
+      offset -= 0.42 + boost;
       if (textLength > 0 && offset <= -textLength / 2) offset += textLength / 2;
       tickerPath.setAttribute('startOffset', String(offset));
       requestAnimationFrame(frame);
